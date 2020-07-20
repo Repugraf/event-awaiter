@@ -14,7 +14,7 @@ export class NodeEventAwaiter implements IEventAwaiter {
       const timeOut = setTimeout(() => {
         this.eventEmmiter.removeAllListeners(key);
         reject(`event (${key}) timeout`);
-      }, this.config.timeout || 20000);
+      }, this.config.timeout ?? 20000);
 
       this.eventEmmiter.once(key, (payload: any) => {
         clearTimeout(timeOut);
