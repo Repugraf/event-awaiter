@@ -1,12 +1,12 @@
 {
   "name": "event-awaiter",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "manages events order of execution",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -p .",
     "lint": "tslint --fix -p .",
-    "prepublish": "npm run build"
+    "install": "npm run build"
   },
   "repository": {
     "type": "git",
