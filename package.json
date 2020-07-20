@@ -1,0 +1,28 @@
+{
+  "name": "event-awaiter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "lint": "tslint --fix -p .",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Repugraf/event-awaiter.git"
+  },
+  "keywords": [],
+  "author": "Serhii Mamedov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Repugraf/event-awaiter/issues"
+  },
+  "homepage": "https://github.com/Repugraf/event-awaiter#readme",
+  "dependencies": {
+    "@types/node": "^14.0.23",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.7"
+  }
+}
