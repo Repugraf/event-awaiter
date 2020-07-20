@@ -33,3 +33,6 @@ ea.dispatchEvent(key, "hello world!");
 ### Common Use Cases
 - WebSocket events
 - RabbitMQ events
+***
+
+The package doesn't support IE

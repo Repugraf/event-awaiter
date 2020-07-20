@@ -15,8 +15,6 @@
       "avoid-escape"
     ],
     "no-return-await": true,
-    "max-classes-per-file": false,
-    "object-literal-sort-keys": false,
     "trailing-comma": [
       true,
       {
@@ -24,12 +22,7 @@
         "singleline": "never"
       }
     ],
-    "import-spacing": false,
     "no-var-requires": false,
-    "no-console": false,
-    "ban-types": false,
-    "only-arrow-functions": false,
-    "arrow-parens": false,
     "curly": false,
     "no-trailing-whitespace": true,
     "whitespace": [
@@ -39,18 +32,10 @@
       "check-module"
     ],
     "space-before-function-paren": false,
-    "variable-name": {
-      "options": [
-        "ban-keywords",
-        "allow-leading-underscore"
-      ]
-    },
     "max-line-length": [
       true,
       120
     ],
-    "array-type": false,
-    "no-string-literal": false,
     "no-empty": false
   },
   "rulesDirectory": []
