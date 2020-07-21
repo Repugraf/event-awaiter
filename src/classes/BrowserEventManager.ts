@@ -15,6 +15,7 @@ export class BrowserEventAwaiter implements IEventAwaiter {
       const timeOut = setTimeout(() => {
         clearTimeout(timeOut);
         this.eventTarget.removeEventListener(key, () => { });
+        delete this.keys[key];
         reject(`event (${key}) timeout`);
       }, this.config.timeout ?? 20000);
 
