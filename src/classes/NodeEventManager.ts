@@ -1,14 +1,18 @@
 import type { IEventAwaiter, IConfig } from "../helpers/types";
+import { EventEmitter } from "events";
 
 export class NodeEventAwaiter implements IEventAwaiter {
-  private eventEmmiter;
+  private keys: { [key: string]: any } = {};
+  private eventEmmiter: EventEmitter;
 
   constructor(private config: IConfig = {}) {
-    const { EventEmitter } = require("events");
     this.eventEmmiter = new EventEmitter();
   }
 
   public setupListener = (key: string): Promise<any> => {
+    if (key in this.keys) throw new Error(`key (${key}) already in use`);
+    this.keys[key] = null;
+
     return new Promise((resolve, reject) => {
 
       const timeOut = setTimeout(() => {
@@ -19,6 +23,7 @@ export class NodeEventAwaiter implements IEventAwaiter {
       this.eventEmmiter.once(key, (payload: any) => {
         clearTimeout(timeOut);
         this.eventEmmiter.removeAllListeners(key);
+        delete this.keys[key];
         resolve(payload);
       });
     });

@@ -1,6 +1,6 @@
 {
   "name": "event-awaiter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "manages events order of execution",
   "main": "./dist/index.js",
   "scripts": {
