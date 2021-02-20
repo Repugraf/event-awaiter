@@ -5,7 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -p .",
-    "lint": "tslint --fix -p .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "prepublish": "npm run build",
     "test": "node ./dist/test/index.test.js"
   },
@@ -31,6 +32,9 @@
   "homepage": "https://github.com/Repugraf/event-awaiter#readme",
   "devDependencies": {
     "@types/node": "^14.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
     "tslint": "^6.1.2",
     "typescript": "^3.9.7"
   }
