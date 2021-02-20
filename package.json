@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepublish": "npm run build",
-    "test": "node ./dist/test/index.test.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,10 +33,13 @@
   },
   "homepage": "https://github.com/Repugraf/event-awaiter#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/node": "^14.0.23",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.20.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.1",
     "tslint": "^6.1.2",
     "typescript": "^3.9.7"
   }
