@@ -3,10 +3,10 @@ import { EventEmitter } from "events";
 
 export class NodeEventAwaiter implements IEventAwaiter {
   private keys: { [key: string]: any } = {};
-  private eventEmmiter: EventEmitter;
+  private eventEmitter: EventEmitter;
 
   constructor(private config: IConfig = {}) {
-    this.eventEmmiter = new EventEmitter();
+    this.eventEmitter = new EventEmitter();
   }
 
   public setupListener = (key: string): Promise<any> => {
@@ -17,20 +17,20 @@ export class NodeEventAwaiter implements IEventAwaiter {
 
       const timeOut = setTimeout(() => {
         clearTimeout(timeOut);
-        this.eventEmmiter.removeAllListeners(key);
+        this.eventEmitter.removeAllListeners(key);
         delete this.keys[key];
         reject(`event (${key}) timeout`);
       }, this.config.timeout ?? 20000);
 
-      this.eventEmmiter.once(key, (payload: any) => {
+      this.eventEmitter.once(key, (payload: any) => {
         clearTimeout(timeOut);
-        this.eventEmmiter.removeAllListeners(key);
+        this.eventEmitter.removeAllListeners(key);
         delete this.keys[key];
         resolve(payload);
       });
     });
   }
 
-  public dispatchEvent = (key: string, payload: any = true) => this.eventEmmiter.emit(key, payload);
+  public dispatchEvent = (key: string, payload: any = true) => this.eventEmitter.emit(key, payload);
 
 }
