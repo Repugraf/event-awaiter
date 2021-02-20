@@ -1,5 +1,4 @@
-import { strict as assert } from "assert";
-const { equal, rejects, notEqual } = assert;
+import { strictEqual, notStrictEqual, rejects } from "assert";
 import { getEventAwaiter } from "../";
 
 const eventAwaiter = getEventAwaiter({ timeout: 1000 });
@@ -33,7 +32,7 @@ const main = async () => {
       eventAwaiter.setupListener(el.key).then((v) => resolve(v)).catch(reject);
       setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
     });
-    notEqual(val, el.output);
+    notStrictEqual(val, el.output);
   }));
 
   await Promise.all(successCases.map(async el => {
@@ -41,7 +40,7 @@ const main = async () => {
       eventAwaiter.setupListener(el.key).then((v) => resolve(v)).catch(reject);
       setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
     });
-    equal(val, el.output);
+    strictEqual(val, el.output);
   }));
 
   // tslint:disable-next-line: no-console
