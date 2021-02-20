@@ -2,9 +2,11 @@
   "name": "event-awaiter",
   "version": "1.0.7",
   "description": "manages events order of execution",
-  "main": "./dist/index.js",
+  "main": "./dist/esm/index.js",
+  "module": "./dist/cjs/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepublish": "npm run build",
