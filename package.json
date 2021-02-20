@@ -1,6 +1,6 @@
 {
   "name": "event-awaiter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "manages events order of execution",
   "main": "./lib/esm/index.js",
   "module": "./lib/cjs/index.js",
