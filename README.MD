@@ -3,7 +3,7 @@
 ***
 Do you have a problem with asynchronous operations where you need to wait for some other event to finish before you continue processing the current one? This package solves this problem.  
   
-The packege can be used in browser (using EventTarget) or nodejs (using EventEmmitter)
+The package can be used in browser (using EventTarget) or nodejs (using EventEmitter)
 ***
 
 ### Installation
@@ -12,10 +12,10 @@ The packege can be used in browser (using EventTarget) or nodejs (using EventEmm
 ***
 
 ### Usage
-```
+```js
 const { getEventAwaiter } = require("event-awaiter");
 const ea = getEventAwaiter({
-  timeout: 20000 // number of miliseconds after event will get rejected
+  timeout: 20000 // number of milliseconds after event will get rejected
 });
 
 const key = "uniqueKey";
