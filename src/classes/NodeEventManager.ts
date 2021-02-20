@@ -1,4 +1,4 @@
-import type { IEventAwaiter, IConfig } from "../helpers/types";
+import type { IEventAwaiter, IConfig } from "../types";
 import { EventEmitter } from "events";
 
 export class NodeEventAwaiter implements IEventAwaiter {

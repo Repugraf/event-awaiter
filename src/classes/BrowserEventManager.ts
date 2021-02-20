@@ -1,4 +1,4 @@
-import type { IEventAwaiter, IConfig } from "../helpers/types";
+import type { IEventAwaiter, IConfig } from "../types";
 
 export class BrowserEventAwaiter implements IEventAwaiter {
   private keys: { [key: string]: any } = {};

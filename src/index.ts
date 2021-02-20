@@ -1,4 +1,4 @@
-import type { IEventAwaiter as IEventAwaiter, IConfig } from "./helpers/types";
+import type { IEventAwaiter as IEventAwaiter, IConfig } from "./types";
 import { BrowserEventAwaiter } from "./classes/BrowserEventManager";
 import { NodeEventAwaiter } from "./classes/NodeEventManager";
 
