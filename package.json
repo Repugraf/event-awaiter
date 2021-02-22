@@ -2,8 +2,8 @@
   "name": "event-awaiter",
   "version": "1.1.0",
   "description": "manages events order of execution",
-  "main": "./lib/esm/index.js",
-  "module": "./lib/cjs/index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "types": "./lib/cjs/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
