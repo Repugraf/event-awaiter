@@ -1,6 +1,6 @@
 import type { IEventAwaiter as IEventAwaiter, IConfig } from "./types";
-import { BrowserEventAwaiter } from "./classes/BrowserEventManager";
-import { NodeEventAwaiter } from "./classes/NodeEventManager";
+import { BrowserEventAwaiter } from "./classes/BrowserEventManager.js";
+import { NodeEventAwaiter } from "./classes/NodeEventManager.js";
 
 export const getEventAwaiter = (config: IConfig = {}): IEventAwaiter => {
   // @ts-ignore
