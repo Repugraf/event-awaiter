@@ -6,7 +6,7 @@
   "module": "./lib/esm/index.js",
   "types": "./lib/cjs/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ./scripts/post-build.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepublish": "npm run build",
