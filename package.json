@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/Repugraf/event-awaiter#readme",
   "devDependencies": {
+    "@repugraf/rewrite-esm-paths": "^1.0.1",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.0.23",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
