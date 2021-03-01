@@ -58,6 +58,7 @@
     "node_modules",
     "lib",
     "jest.config.js",
-    "*.test.ts"
+    "*.test.ts",
+    "scripts"
   ]
 }
