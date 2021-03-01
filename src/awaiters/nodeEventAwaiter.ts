@@ -1,7 +1,7 @@
 import type { IEventAwaiter, IConfig } from "../types";
 import { EventEmitter } from "events";
 
-export const  createNodeEventAwaiter = (config: IConfig = {}): IEventAwaiter => {
+export const createNodeEventAwaiter = (config: IConfig = {}): IEventAwaiter => {
   const keys: { [key: string]: any } = {};
   const eventEmitter = new EventEmitter();
 
@@ -33,7 +33,7 @@ export const  createNodeEventAwaiter = (config: IConfig = {}): IEventAwaiter => 
 
   return {
     setupListener,
-    dispatchEvent    
+    dispatchEvent
   };
 
 };
