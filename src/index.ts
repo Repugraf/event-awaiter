@@ -1,13 +1,14 @@
 import type { IEventAwaiter as IEventAwaiter, IConfig } from "./types";
-import { BrowserEventAwaiter } from "./classes/BrowserEventManager";
-import { NodeEventAwaiter } from "./classes/NodeEventManager";
+import { createBrowserEventAwaiter } from "./awaiters/browserEventAwaiter";
+import { createNodeEventAwaiter } from "./awaiters/nodeEventAwaiter";
 
 export const getEventAwaiter = (config: IConfig = {}): IEventAwaiter => {
-  // @ts-ignore
   if (typeof window !== "undefined" && typeof window.document !== "undefined")
-    return new BrowserEventAwaiter(config);
+    return createBrowserEventAwaiter(config);
+
   else if (typeof process !== "undefined" && process?.versions?.node)
-    return new NodeEventAwaiter(config);
+    return createNodeEventAwaiter(config);
+
   throw new Error("Unsupported js environment");
 };
 
