@@ -3,7 +3,7 @@ export interface IConfig {
 }
 
 export interface IEventAwaiter {
-  setupListener(key: string): Promise<any>;
+  setupListener<T = any>(key: string): Promise<T>;
   dispatchEvent(key: string, payload: any): void;
 }
 
