@@ -12,12 +12,17 @@ describe("getEventAwaiter tests", () => {
       { key, payload: "hello", timeout: 500 } // duplicate key
     ];
 
-    await Promise.all(rejectCases.map(el => {
-      return rejects(async () => new Promise((resolve, reject) => {
-        eventAwaiter.setupListener(el.key).then(resolve).catch(reject);
-        setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
-      }));
-    }));
+    await Promise.all(
+      rejectCases.map((el) => {
+        return rejects(
+          async () =>
+            new Promise((resolve, reject) => {
+              eventAwaiter.setupListener(el.key).then(resolve).catch(reject);
+              setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
+            })
+        );
+      })
+    );
   });
 
   test("wrong cases", async () => {
@@ -27,13 +32,18 @@ describe("getEventAwaiter tests", () => {
       { key, payload: true, timeout: 400, output: false } // true !== false
     ];
 
-    await Promise.all(wrongCases.map(async el => {
-      const val = await new Promise((resolve, reject) => {
-        eventAwaiter.setupListener(el.key).then((v) => resolve(v)).catch(reject);
-        setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
-      });
-      notStrictEqual(val, el.output);
-    }));
+    await Promise.all(
+      wrongCases.map(async (el) => {
+        const val = await new Promise((resolve, reject) => {
+          eventAwaiter
+            .setupListener(el.key)
+            .then((v) => resolve(v))
+            .catch(reject);
+          setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
+        });
+        notStrictEqual(val, el.output);
+      })
+    );
   });
 
   test("success cases", async () => {
@@ -44,13 +54,17 @@ describe("getEventAwaiter tests", () => {
       { key: key.repeat(2), payload: false, timeout: 200, output: false } // false === false
     ];
 
-    await Promise.all(successCases.map(async el => {
-      const val = await new Promise((resolve, reject) => {
-        eventAwaiter.setupListener(el.key).then((v) => resolve(v)).catch(reject);
-        setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
-      });
-      strictEqual(val, el.output);
-    }));
+    await Promise.all(
+      successCases.map(async (el) => {
+        const val = await new Promise((resolve, reject) => {
+          eventAwaiter
+            .setupListener(el.key)
+            .then((v) => resolve(v))
+            .catch(reject);
+          setTimeout(() => eventAwaiter.dispatchEvent(el.key, el.payload), el.timeout);
+        });
+        strictEqual(val, el.output);
+      })
+    );
   });
-
 });

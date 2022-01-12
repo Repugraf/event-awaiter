@@ -10,7 +10,6 @@ export const createNodeEventAwaiter = (config: IConfig = {}): IEventAwaiter => {
     keys[key] = null;
 
     return new Promise((resolve, reject) => {
-
       const timeOut = setTimeout(() => {
         clearTimeout(timeOut);
         eventEmitter.removeAllListeners(key);
@@ -35,5 +34,4 @@ export const createNodeEventAwaiter = (config: IConfig = {}): IEventAwaiter => {
     setupListener,
     dispatchEvent
   };
-
 };

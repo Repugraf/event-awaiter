@@ -12,19 +12,18 @@ export const createBrowserEventAwaiter = (config: IConfig = {}): IEventAwaiter =
 
       const timeOut = setTimeout(() => {
         clearTimeout(timeOut);
-        eventTarget.removeEventListener(key, () => { });
+        eventTarget.removeEventListener(key, () => {});
         delete keys[key];
         reject(`event (${key}) timeout`);
       }, config.timeout ?? 20000);
 
       eventTarget.addEventListener(key, () => {
         clearTimeout(timeOut);
-        eventTarget.removeEventListener(key, () => { });
+        eventTarget.removeEventListener(key, () => {});
         const data = keys[key];
         delete keys[key];
         resolve(data);
       });
-
     });
   };
 
@@ -37,5 +36,4 @@ export const createBrowserEventAwaiter = (config: IConfig = {}): IEventAwaiter =
     setupListener,
     dispatchEvent
   };
-
 };
