@@ -1,6 +1,6 @@
 {
   "name": "event-awaiter",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "manages events order of execution",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ./scripts/post-build.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "repository": {
@@ -33,15 +33,14 @@
   },
   "homepage": "https://github.com/Repugraf/event-awaiter#readme",
   "devDependencies": {
-    "@repugraf/rewrite-esm-paths": "^1.0.1",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.0.23",
-    "@typescript-eslint/eslint-plugin": "^4.15.1",
-    "@typescript-eslint/parser": "^4.15.1",
-    "eslint": "^7.20.0",
-    "jest": "^26.6.3",
-    "ts-jest": "^26.5.1",
-    "tslint": "^6.1.2",
-    "typescript": "^3.9.7"
+    "@repugraf/rewrite-esm-paths": "1.0.1",
+    "@types/jest": "27.4.0",
+    "@types/node": "17.0.8",
+    "@typescript-eslint/eslint-plugin": "5.9.1",
+    "@typescript-eslint/parser": "5.9.1",
+    "eslint": "8.6.0",
+    "jest": "27.4.7",
+    "ts-jest": "27.1.2",
+    "typescript": "4.5.4"
   }
 }
